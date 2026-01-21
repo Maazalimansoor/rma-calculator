@@ -19,8 +19,8 @@ REPAIR_LABOR = 35
 @st.cache_data
 def load_data():
     file_path = os.path.join(os.path.dirname(__file__), "RMA calculator.xlsx")
-    df_items = pd.read_excel(file_path, sheet_name=0)
-    df_dropdowns = pd.read_excel(file_path, sheet_name=2)
+    df_items = pd.read_excel(file_path, sheet_name=0, engine="openpyxl")
+    df_dropdowns = pd.read_excel(file_path, sheet_name=2, engine="openpyxl")
     df_items.columns = df_items.columns.str.strip().str.lower()
     df_dropdowns.columns = df_dropdowns.columns.str.strip()
     return df_items, df_dropdowns
@@ -120,4 +120,5 @@ df_styled = df_results.style.format({"Total Cost": "${:,.2f}"}).apply(highlight_
 st.success("RMA Costs Calculated")
 # Use dataframe for compact display
 st.dataframe(df_styled, use_container_width=True)
+
 
