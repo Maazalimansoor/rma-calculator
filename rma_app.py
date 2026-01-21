@@ -1,3 +1,4 @@
+# rebuild trigger
 # force rebuild
 import streamlit as st
 import pandas as pd
@@ -120,5 +121,6 @@ df_styled = df_results.style.format({"Total Cost": "${:,.2f}"}).apply(highlight_
 st.success("RMA Costs Calculated")
 # Use dataframe for compact display
 st.dataframe(df_styled, use_container_width=True)
+
 
 
