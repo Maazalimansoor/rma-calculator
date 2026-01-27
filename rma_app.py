@@ -19,7 +19,7 @@ st.markdown(
 )
 
 st.title("**Welcome To Alpha RMA Cost Calculator**")
-
+st.write("NEW VERSION LIVE")
 # ------------------ CONSTANTS ------------------
 OUTBOUND_SHIPPING = 5
 RETURN_SHIPPING = 10
